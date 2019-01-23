@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_black">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/appName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/start_appname"
+            android:visibility="visible"/>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="PRESS HERE TO START"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/WHITE"
+            android:background="@drawable/selector_general"/>
+
+    </LinearLayout>
+
+    
+    <Button
+        android:id="@+id/button_info"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="right|top"
+        android:background="@drawable/selector_info" />
+
+
+
+</FrameLayout>

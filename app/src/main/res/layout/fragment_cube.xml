@@ -1,0 +1,203 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.height185.rubiksdetector.fragment.CubeFragment">
+
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/glview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:windowIsTranslucent="true" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="top|center_horizontal">
+
+            <Button
+                android:id="@+id/btn_front"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:textColor="@android:color/white"
+                android:text="F"/>
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_red"
+                android:textColor="@android:color/white"
+                android:text="B"/>
+
+            <Button
+                android:id="@+id/btn_right"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:textColor="@android:color/white"
+                android:text="R"/>
+
+            <Button
+                android:id="@+id/btn_left"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_red"
+                android:textColor="@android:color/white"
+                android:text="L"/>
+
+            <Button
+                android:id="@+id/btn_up"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:textColor="@android:color/white"
+                android:text="U"/>
+
+            <Button
+                android:id="@+id/btn_down"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_red"
+                android:textColor="@android:color/white"
+                android:text="D"/>
+
+            <Button
+                android:id="@+id/btn_slide"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:textColor="@android:color/white"
+                android:text="S"/>
+
+            <Button
+                android:id="@+id/btn_middle"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_red"
+                android:textColor="@android:color/white"
+                android:text="M"/>
+
+            <Button
+                android:id="@+id/btn_equator"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_blue"
+                android:textColor="@android:color/white"
+                android:text="E"/>
+
+        </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x axis"
+                    android:textColor="@color/BLACK" />
+
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/seek_xRotate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="y axis"
+                    android:textColor="@color/BLACK" />
+
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/seek_yRotate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="z axis"
+                    android:textColor="@color/BLACK" />
+
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/seek_zRotate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_solution"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_white"
+            android:text="GET\nSOLUTION"
+            android:textColor="@color/BLACK" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</FrameLayout>

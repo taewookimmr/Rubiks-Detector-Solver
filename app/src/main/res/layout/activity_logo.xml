@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_black">
+
+
+    <!--style로 logo_backgound를 background로 지정하였기 때문에
+        이 코드를 작성하지 않아도 상관없음-->
+    <ImageView
+        android:id="@+id/logo_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_black"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/logo_word"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo_word"
+        android:visibility="visible"/>
+
+</FrameLayout>

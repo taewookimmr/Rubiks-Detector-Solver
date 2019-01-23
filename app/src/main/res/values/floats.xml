@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cube_trans_z" format="float" type="dimen">-20</item>
+    <item name="diamond_trans_z" format="float" type="dimen">-6.0</item>
+</resources>

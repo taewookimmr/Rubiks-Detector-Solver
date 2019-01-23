@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RubiksDetector</string>
+
+    <!--CUBE 3D CONSTRUCUTION 관련(OPENGL부분)-->
+
+    <string name="app_version">Version: %1$s</string>
+    <string name="made_by">Made by HEIGHT185</string>
+    <string name="contact_me">Contact me at</string>
+    <string name="email_address">taewookimmr@gmail.com</string>
+
+    <string name="admob_sample">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_app_id">ca-app-pub-6531056109214059~6599340821</string>
+
+    <string name="admob_xml_sample">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_banner_test">ca-app-pub-6531056109214059/9491073957</string>
+    <string name="admob_banner_menu">ca-app-pub-6531056109214059/3915313642</string>
+    <string name="admob_banner_manual">ca-app-pub-6531056109214059/2292585689</string>
+
+    <string name="text_source">SOURCE</string>
+    <string name="text_empty_view">NO DATA</string>
+    <string name="text_open_source_licenses">Open source licenses</string>
+
+    <string name="text_speed">Speed</string>
+    <string name="text_rotate_x">rotateX</string>
+    <string name="text_rotate_y">rotateY</string>
+    <string name="text_rotate_z">rotateZ</string>
+    <string name="text_donate_advertisement">Donate advertisement</string>
+
+</resources>

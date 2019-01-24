@@ -5,3 +5,4 @@ remote repository of Rubiks-Detector-Solver
 190124.1441.github.test.updated.at.remote
 190124.1444.github.test.updated.at.local
 // locally
+remote update

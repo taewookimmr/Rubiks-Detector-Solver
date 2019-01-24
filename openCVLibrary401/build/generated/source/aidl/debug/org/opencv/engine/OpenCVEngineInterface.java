@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\privateSpace\\android\\workspace\\Portfolio\\RubiksDetector\\openCVLibrary401\\src\\main\\aidl\\org\\opencv\\engine\\OpenCVEngineInterface.aidl
+ * Original file: C:\\privateSpace\\github\\Rubiks-Detector-Solver\\openCVLibrary401\\src\\main\\aidl\\org\\opencv\\engine\\OpenCVEngineInterface.aidl
  */
 package org.opencv.engine;
 /**

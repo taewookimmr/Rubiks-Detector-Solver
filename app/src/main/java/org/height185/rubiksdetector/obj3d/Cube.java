@@ -32,7 +32,7 @@ public class Cube {
 	public int rotatedLayer = -1; // 회전될 면을 나타내는 변수, 회전될 면이 없으면 -1으로
 
 	public int    state_pxo[][] 	= new int [2][26];
-	public int    state_xpo[][] 	= new int [2][26];
+	public int    state_xpo[][] 	= new int [2][26]; // deprecated variable, 사용하지 않는 변수 입니다. 191028
 	public Piece  pieceAt[]			= new Piece[26]; // 8개의 corner, 12개의 edge, 6개의 center 순으로
 
 	// 이건 오로지 이미지 처리 후 얻어진 데이터를 저장하는 배열에 해당하고,

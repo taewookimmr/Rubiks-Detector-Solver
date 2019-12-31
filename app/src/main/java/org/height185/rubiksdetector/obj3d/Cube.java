@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class Cube {
-
+	// pull request test from whilescape
 	public static final   int front 	= 0;
 	public static final	  int back 		= 1;
 	public static final	  int right 	= 2;

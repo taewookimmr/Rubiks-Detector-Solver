@@ -6,3 +6,4 @@
 * Algorithm update
 * Image processing update
 * Introducing DL
+* make admob code run

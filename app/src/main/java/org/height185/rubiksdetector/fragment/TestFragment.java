@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.height185.rubiksdetector.TestActivity;
+import org.height185.rubiksdetector.activities.TestActivity;
 import org.height185.rubiksdetector.renderer.CubeView2D;
 
 public class TestFragment extends Fragment {

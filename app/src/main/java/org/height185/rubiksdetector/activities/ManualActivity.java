@@ -1,4 +1,4 @@
-package org.height185.rubiksdetector;
+package org.height185.rubiksdetector.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+
+import org.height185.rubiksdetector.R;
 
 public class ManualActivity extends AppCompatActivity {
 

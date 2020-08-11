@@ -1,9 +1,11 @@
-package org.height185.rubiksdetector;
+package org.height185.rubiksdetector.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import org.height185.rubiksdetector.R;
 
 import java.util.ArrayList;
 

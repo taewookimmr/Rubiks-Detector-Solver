@@ -1,4 +1,4 @@
-package org.height185.rubiksdetector;
+package org.height185.rubiksdetector.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,9 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
+import org.height185.rubiksdetector.R;
+import org.height185.rubiksdetector.activities.DetectActivity;
+import org.height185.rubiksdetector.activities.ShowActivity;
 import org.height185.rubiksdetector.adapters.ViewPagerAdapter;
 import org.height185.rubiksdetector.fragment.TestFragment;
 

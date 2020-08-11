@@ -1,5 +1,5 @@
 
-package org.height185.rubiksdetector;
+package org.height185.rubiksdetector.activities;
 
 
 import android.content.Intent;
@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import org.height185.rubiksdetector.R;
 import org.height185.rubiksdetector.rubiksDetector.SurfaceDetector;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;

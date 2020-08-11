@@ -1,4 +1,4 @@
-package org.height185.rubiksdetector;
+package org.height185.rubiksdetector.activities;
 
 
 import android.annotation.TargetApi;
@@ -18,6 +18,8 @@ import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+
+import org.height185.rubiksdetector.R;
 
 public class MenuActivity extends AppCompatActivity {
 

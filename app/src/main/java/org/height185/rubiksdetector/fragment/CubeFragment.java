@@ -15,8 +15,8 @@ import android.widget.Button;
 import android.widget.SeekBar;
 
 import org.height185.rubiksdetector.R;
-import org.height185.rubiksdetector.ShowActivity;
-import org.height185.rubiksdetector.SolutionActivity;
+import org.height185.rubiksdetector.activities.ShowActivity;
+import org.height185.rubiksdetector.activities.SolutionActivity;
 import org.height185.rubiksdetector.algorithm.Algorithm;
 import org.height185.rubiksdetector.renderer.CubeRenderer;
 

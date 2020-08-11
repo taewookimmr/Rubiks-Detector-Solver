@@ -3,6 +3,7 @@ package org.height185.rubiksdetector.obj3d;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
+import java.util.Arrays;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -187,7 +188,7 @@ public class Piece {
 
 	public void renewalColorOfFace(){
 
-		for(int i = 0; i < colorOfFace.length; i++){colorOfFace[i] = BLACK;}
+		Arrays.fill(colorOfFace, BLACK);
 
 		if(placeNumber>=0 && placeNumber <8){
 			colorOfFace[COLOR[placeNumber][0]] = COLOR[pieceNumber][face[0]];

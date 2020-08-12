@@ -1,11 +1,10 @@
 package org.height185.rubiksdetector.rubiksDetector;
 
+import android.graphics.Point;
+import android.graphics.Rect;
+
 import org.height185.rubiksdetector.typedef.BGR_SDATA;
 import org.height185.rubiksdetector.typedef.Scalar;
-import org.opencv.core.Mat;
-import org.opencv.core.Point;
-import org.opencv.core.Rect;
-
 import java.util.Vector;
 
 public class SurfaceDetector {
@@ -29,10 +28,10 @@ public class SurfaceDetector {
 
     public boolean isSaveButtonClicked = false;   // 해당 면의 검출 결과를 저장하는 버튼이 눌렸는지 확인
 
-    public int surfaceColor[]; // 9, and initial value is -1
-    public boolean isDetectionDone[]; // 9, and initial value is false
-    public Scalar color_inner[]; // 9, and initial value is (0,0,0)
-    public Scalar color_ref[] = {
+    public int[] surfaceColor; // 9, and initial value is -1
+    public boolean[] isDetectionDone; // 9, and initial value is false
+    public Scalar[] color_inner; // 9, and initial value is (0,0,0)
+    public Scalar[] color_ref = {
             new Scalar(255, 0, 0), // blue
             new Scalar(0, 255, 0), // green
             new Scalar(0, 0, 255), // red
@@ -50,9 +49,9 @@ public class SurfaceDetector {
     public int size_outter = 0;
     public int size_inner = 0;
     public int interval = 5;
-    public int relativePosition[][]; // 9,2
+    public int[][] relativePosition; // 9,2
 
-    public float bgr_temp[] = new float[3]; //
+    public float[] bgr_temp = new float[3]; //
 
     public float separate_ro = 0.035f;
     public float separate_gy = 0.000f;
@@ -88,7 +87,7 @@ public class SurfaceDetector {
     }
 
     public void setRelativePosition() {
-        int temp[][] = {
+        int[][] temp = {
             {-size_inner - interval, -size_inner - interval}, {0, -size_inner - interval}, {size_inner + interval, -size_inner - interval},
             {-size_inner - interval, 0}, {0, 0}, {size_inner + interval,0},
             {-size_inner - interval, +size_inner + interval}, {0, +size_inner + interval}, {size_inner + interval, +size_inner + interval},
@@ -285,11 +284,4 @@ public class SurfaceDetector {
 
         return result;
     }
-
-
-
-    public native void drawRectangle(long imageAddr, Rect rect, Scalar scalar, int thickness);
-    public native void getImageROI(long imageAddr, long resultAddr, Rect rect);
-
-
 }

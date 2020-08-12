@@ -1,7 +1,7 @@
 package org.height185.rubiksdetector.typedef;
 
 public class BGR_SDATA {
-    public SDATA sdata[];
+    public SDATA[] sdata;
 
     public BGR_SDATA(){
         sdata = new SDATA[3];

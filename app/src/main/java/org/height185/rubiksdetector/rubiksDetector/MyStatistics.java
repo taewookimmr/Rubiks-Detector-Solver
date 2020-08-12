@@ -1,43 +1,37 @@
 package org.height185.rubiksdetector.rubiksDetector;
 
 import org.height185.rubiksdetector.typedef.BGR_SDATA;
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MyStatistics {
 
-    public static float getAverage(Mat hist){
+    public static float getAverage(Mat hist) {
         float denominator = 0.0f;
         float numerator = 0.0f;
-        for(int i = 0 ; i < hist.rows() ; i++){
+        for (int i = 0; i < hist.rows(); i++) {
             float temp = (float) (hist.get(i, 0)[0]);
 
             denominator += temp;
             numerator += i * temp;
 
         }
-        float average = numerator / denominator;
-        return average;
+        return numerator / denominator;
     }
 
-    public static float getDeviation(Mat hist){
+    public static float getDeviation(Mat hist) {
         float average = getAverage(hist);
 
         float denominator = 0;
         float numerator = 0;
-        for(int i = 0 ; i < hist.rows()  ; i++){
+        for (int i = 0; i < hist.rows(); i++) {
             float temp = (float) (hist.get(i, 0)[0]);
             denominator += temp;
             numerator += i * i * temp;
         }
 
         float temp = numerator / denominator;
-        float result = (float) Math.sqrt(temp - average * average);
-        return result;
+        return (float) Math.sqrt(temp - average * average);
 
     }
 
@@ -49,12 +43,12 @@ public class MyStatistics {
         // split 될때 c++과 다른 점이 있다면
         // BGR 순서로 SPLIT 되는 것이 아니라 RGB 순서로 SPLIT 되는 것이다.
 
-        Mat hist[] = new Mat[3];
+        Mat[] hist = new Mat[3];
 
         // 이 부분을 수정함. get(2-i)
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             hist[i] = new Mat();
-           getHistogram(hist[i].getNativeObjAddr(), sub.get(2-i).getNativeObjAddr());
+            getHistogram(hist[i].getNativeObjAddr(), sub.get(2 - i).getNativeObjAddr());
         }
 
         // 일단 평균을 얻습니다.
@@ -80,5 +74,4 @@ public class MyStatistics {
         return result;
     }
 
-    public static native void getHistogram(long histAddr, long imageAddr);
 }

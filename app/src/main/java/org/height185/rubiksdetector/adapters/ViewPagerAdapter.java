@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     private final ArrayList<Fragment> mFragmentList = new ArrayList<>();
-    private final ArrayList<String> mFragmentTitleList = new ArrayList<>();
 
     public ViewPagerAdapter(FragmentManager manager) {
         super(manager);
@@ -24,13 +23,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return mFragmentList.size();
     }
 
-    public void addFragment(Fragment fragment, String title) {
+    public void addFragment(Fragment fragment) {
         mFragmentList.add(fragment);
-        mFragmentTitleList.add(title);
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mFragmentTitleList.get(position);
     }
 }

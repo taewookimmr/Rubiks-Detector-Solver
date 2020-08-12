@@ -16,7 +16,7 @@ public class Cube {
 	public static final   int middle 	= 7;
 	public static final   int equator 	= 8;
 
-	public static final int pieceInLayer[][] = {
+	public static final int[][] pieceInLayer = {
 			{1-1, 2-1, 3-1, 4-1,   8+1-1, 8+2-1, 8+3-1, 8+4-1,     20+0},   // front
 			{5-1, 6-1, 7-1, 8-1,   8+9-1, 8+10-1, 8+11-1, 8+12-1,  20+1},   // back
 			{2-1, 3-1, 7-1, 8-1,   8+2-1, 8+6-1, 8+7-1, 8+11-1,    20+2},   // right
@@ -31,13 +31,13 @@ public class Cube {
 
 	public int rotatedLayer = -1; // 회전될 면을 나타내는 변수, 회전될 면이 없으면 -1으로
 
-	public int    state_pxo[][] 	= new int [2][26];
-	public int    state_xpo[][] 	= new int [2][26]; // deprecated variable, 사용하지 않는 변수 입니다. 191028
-	public Piece  pieceAt[]			= new Piece[26]; // 8개의 corner, 12개의 edge, 6개의 center 순으로
+	public int[][] state_pxo = new int [2][26];
+	public int[][] state_xpo = new int [2][26]; // deprecated variable, 사용하지 않는 변수 입니다. 191028
+	public Piece[] pieceAt = new Piece[26]; // 8개의 corner, 12개의 edge, 6개의 center 순으로
 
 	// 이건 오로지 이미지 처리 후 얻어진 데이터를 저장하는 배열에 해당하고,
 	// 그 배열 데이터를 cube의 stata_pxo로 전달하는데 필요한 배열이다.
-	public int    surfaceColor[]    = new int [6*3*3]; // 54개 surface의 색을 저장하는 배열
+	public int[] surfaceColor = new int [6*3*3]; // 54개 surface의 색을 저장하는 배열
 
 	public ArrayList<String> solution = new ArrayList<>();
 
@@ -91,7 +91,7 @@ public class Cube {
 
 	// color detection 후  넘어온 surface 배열의 데이터를 state_pxo 배열 데이터로 전환하는 메서드
 	public void transferSurfaceColorToState() {
-		int result[] = {0, 0}; // 초기화
+		int[] result = {0, 0}; // 초기화
 
 		// 코너
 		for(int i = 0; i < 8; i++){

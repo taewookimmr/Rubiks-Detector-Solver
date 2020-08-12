@@ -5,17 +5,11 @@ public class Scalar {
     public int G;
     public int R;
 
-    public Scalar(){
-
-    }
+    public Scalar(){ }
 
     public Scalar(int B, int G, int R){
         this.B = B;
         this.G = G;
         this.R = R;
     }
-
-
-
-
 }

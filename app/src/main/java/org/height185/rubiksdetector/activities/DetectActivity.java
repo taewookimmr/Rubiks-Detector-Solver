@@ -20,18 +20,6 @@ import android.widget.TextView;
 
 import org.height185.rubiksdetector.R;
 import org.height185.rubiksdetector.rubiksDetector.SurfaceDetector;
-import org.opencv.android.BaseLoaderCallback;
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
-import org.opencv.core.Mat;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 
 public class DetectActivity extends AppCompatActivity
         implements CameraBridgeViewBase.CvCameraViewListener2 {
@@ -41,46 +29,15 @@ public class DetectActivity extends AppCompatActivity
     private Mat matInput;
     private Mat matResult;
 
-    public SurfaceDetector surfaceDetector[]; // surfaceDetector 6개가 필요하다.
+    public SurfaceDetector[] surfaceDetector; // surfaceDetector 6개가 필요하다.
     public int sdIndex = 0;     // 0~5;
-    public int surfaceColor []; // 6*9;
-    public int searchOrder[] = {0, 2, 1, 3, 4, 5 }; // 탐색 순서
+    public int[] surfaceColor; // 6*9;
+    public int[] searchOrder = {0, 2, 1, 3, 4, 5 }; // 탐색 순서
 
     public TextView textView_targetColor;
     public Button button_save ;
     public AppCompatSeekBar seekBar_ro;
     public AppCompatSeekBar seekBar_gy;
-
-    static {
-        System.loadLibrary("opencv_java4");
-        System.loadLibrary("native-lib");
-    }
-
-    // 데이터 확보용으로 사용하는 임시 메서드
-    private void saveFile(String str){
-        String foldername = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Testlog";
-        String filename = "logfile.txt";
-
-        File dir = new File(foldername);
-        if(!dir.exists()){
-            dir.mkdir();
-        }
-
-        try {
-            FileOutputStream fos = new FileOutputStream("/mnt/sdcard/"+foldername + "/" + filename, true);
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(fos));
-            writer.append(str);
-            writer.newLine();
-            writer.flush();
-            writer.close();
-            fos.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException ex){
-            ex.printStackTrace();
-        }
-    }
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -266,8 +223,8 @@ public class DetectActivity extends AppCompatActivity
             // 어떤 surface를 dectec해야 하는지 알려주는 문구를 출력해주는 부분
             final Handler handler = new Handler(Looper.getMainLooper()) {
                 public void handleMessage(Message msg) {
-                    String detectOrder[] = {"blue", "red", "green", "orange", "yellow", "white"};
-                    String detectOrder2[] = {"yellow", "yellow", "yellow", "yellow", "green", "blue"};
+                    String[] detectOrder = {"blue", "red", "green", "orange", "yellow", "white"};
+                    String[] detectOrder2 = {"yellow", "yellow", "yellow", "yellow", "green", "blue"};
                     textView_targetColor.setText("Detect " + detectOrder[sdIndex] + " centered face with "
                             + detectOrder2[sdIndex] +" center looking up");
                 }

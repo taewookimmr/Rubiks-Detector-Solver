@@ -25,7 +25,6 @@ import org.height185.rubiksdetector.renderer.CubeRenderer;
  */
 public class CubeFragment extends Fragment implements AppCompatSeekBar.OnSeekBarChangeListener{
 
-    public static final String NAME = "Cube";
     private GLSurfaceView glView;
     private CubeRenderer cubesRenderer;
 
@@ -33,7 +32,7 @@ public class CubeFragment extends Fragment implements AppCompatSeekBar.OnSeekBar
     public AppCompatSeekBar seek_yRotate;
     public AppCompatSeekBar seek_zRotate;
 
-    public Button buttons[];
+    public Button[] buttons;
     public Button button_solution;
 
     public CubeFragment() {

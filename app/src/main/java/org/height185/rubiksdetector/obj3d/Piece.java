@@ -15,9 +15,9 @@ public class Piece {
 	public int pieceNumber;
 	public int placeNumber;
 	public int orientation;
-	public int fixedFace[];
-	public int face[];
-	public int colorOfFace[];
+	public int[] fixedFace;
+	public int[] face;
+	public int[] colorOfFace;
 
 	public FloatBuffer vertexBuffer; // Buffer for vertex-array
 
@@ -48,7 +48,7 @@ public class Piece {
 	public static int WHITE 	= 5;
 	public static int BLACK 	= 6;
 
-	public static int COLOR[][] ={
+	public static int[][] COLOR ={
 			{BLUE, ORANGE, YELLOW}, {BLUE, RED, YELLOW}, {BLUE, RED, WHITE}, {BLUE, ORANGE, WHITE},
 			{GREEN, ORANGE, WHITE}, {GREEN, ORANGE, YELLOW}, {GREEN, RED, YELLOW}, {GREEN, RED, WHITE},
 

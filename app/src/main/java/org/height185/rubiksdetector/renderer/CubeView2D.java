@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class CubeView2D extends View {
 
-    public int surfaceColor[] = new int[6*9];
-    public Point position[]   = new Point [6*9];
-    public Button button[]    = new Button[6*9];
+    public int[] surfaceColor = new int[6*9];
+    public Point[] position = new Point [6*9];
+    public Button[] button = new Button[6*9];
 
     public int size = 65;
     public int interval = size + 10;
@@ -26,7 +26,7 @@ public class CubeView2D extends View {
     private RectF rectF;
 
 
-    public CubeView2D(Context context, int surfaceColor[]) {
+    public CubeView2D(Context context, int[] surfaceColor) {
         super(context);
 
         for(int i = 0; i < 6*9; i++){
@@ -100,7 +100,7 @@ public class CubeView2D extends View {
     public void drawSubSurface(Canvas canvas, Paint paint, RectF rectF, int index){
         paint.setStyle(Paint.Style.FILL);
         rectF.set(position[index].x, position[index].y, position[index].x+size, position[index].y+size);
-        int color =  -1;
+        int color;
         switch (surfaceColor[index]){
             case 0: color= R.color.BLUE; break;
             case 1: color= R.color.GREEN; break;

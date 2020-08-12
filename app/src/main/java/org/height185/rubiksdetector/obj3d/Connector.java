@@ -7,11 +7,11 @@ package org.height185.rubiksdetector.obj3d;
 public class Connector {
 
     // 각 corner, edge를 구별하기 위해 sum of 2^(색번호 of 구성 surface)를 구함
-    public static  int sumOfColorOfCorner[] = {25, 21, 37, 41, 42, 26, 22,  38};
-    public static  int sumOfColorOfEdge[]   = {17, 5, 33, 9, 24, 20, 36, 40, 10, 18, 6, 34};
-    public static  int sumOfColorOfCenter[] = {1, 2, 4, 8, 16, 32};
+    public static int[] sumOfColorOfCorner = {25, 21, 37, 41, 42, 26, 22,  38};
+    public static int[] sumOfColorOfEdge = {17, 5, 33, 9, 24, 20, 36, 40, 10, 18, 6, 34};
+    public static int[] sumOfColorOfCenter = {1, 2, 4, 8, 16, 32};
 
-    public static  int pieceAsFaces[][] = {
+    public static int[][] pieceAsFaces = {
             // 코너 8개
             {0*9+0, 3*9+2, 4*9+6}, {0*9+2, 2*9+0, 4*9+8}, {0*9+8, 2*9+6, 5*9+2}, {0*9+6, 3*9+8, 5*9+0},
             {1*9+8, 3*9+6, 5*9+6}, {1*9+2, 3*9+0, 4*9+0}, {1*9+0, 2*9+2, 4*9+2}, {1*9+6, 2*9+8, 5*9+8},

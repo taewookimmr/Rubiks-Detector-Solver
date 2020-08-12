@@ -23,13 +23,13 @@ import org.height185.rubiksdetector.fragment.TestFragment;
 
 public class TestActivity extends AppCompatActivity {
 
-    public int surfaceColor[] = new int[6*9]; // cube's 2d state data
+    public int[] surfaceColor = new int[6*9]; // cube's 2d state data
     public Button button_reDetect; // button for going to DetectActivity
     public Button button_show3d;   // button for going to ShowActivity
     private AdView adView;         // admob
 
-    public Button buttons_state[] = new Button[6*9]; // buttons for showing 2d state data as colors
-    public int bid[] = {
+    public Button[] buttons_state = new Button[6*9]; // buttons for showing 2d state data as colors
+    public int[] bid = {
             // array of ids of buttons_state
             R.id.b0, R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8,
             R.id.b9, R.id.b10, R.id.b11, R.id.b12, R.id.b13, R.id.b14, R.id.b15, R.id.b16, R.id.b17,
@@ -39,8 +39,8 @@ public class TestActivity extends AppCompatActivity {
             R.id.b45, R.id.b46, R.id.b47, R.id.b48, R.id.b49, R.id.b50, R.id.b51, R.id.b52, R.id.b53
     };
 
-    public Button buttons_update[] = new Button[6]; // buttons for updating the color of a buttons_state
-    public int buid[] = {
+    public Button[] buttons_update = new Button[6]; // buttons for updating the color of a buttons_state
+    public int[] buid = {
             // array of ids of buttons_update
             R.id.bu0, R.id.bu1,R.id.bu2,R.id.bu3,R.id.bu4,R.id.bu5
     };
@@ -69,9 +69,6 @@ public class TestActivity extends AppCompatActivity {
         if(intent != null){
             surfaceColor = intent.getIntArrayExtra("surfaceColor");
         }
-
-//        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager_test);
-//        setupViewPager(viewPager);
 
         button_reDetect = (Button) findViewById(R.id.button_reDetect);
         button_reDetect.setOnClickListener(new View.OnClickListener() {
@@ -180,12 +177,5 @@ public class TestActivity extends AppCompatActivity {
             Toast.makeText(this, "ILLEGAL STATE\nDETECT AGAIN",Toast.LENGTH_LONG).show();
 
         }
-    }
-
-    // not used. Instead, buttons_state used
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(TestFragment.newInstance(), TestFragment.NAME);
-        viewPager.setAdapter(adapter);
     }
 }

@@ -12,7 +12,7 @@ import org.height185.rubiksdetector.fragment.CubeFragment;
 
 public class ShowActivity extends AppCompatActivity {
     public int requestCode = -1;
-    public int surfaceColor[] = new int[6*9];
+    public int[] surfaceColor = new int[6*9];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class ShowActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(CubeFragment.newInstance(), CubeFragment.NAME);
+        adapter.addFragment(CubeFragment.newInstance());
         viewPager.setAdapter(adapter);
     }
 

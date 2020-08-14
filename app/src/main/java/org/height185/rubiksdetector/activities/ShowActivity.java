@@ -12,7 +12,7 @@ import org.height185.rubiksdetector.fragment.CubeFragment;
 
 public class ShowActivity extends AppCompatActivity {
     public int requestCode = -1;
-    public int[] surfaceColor = new int[6*9];
+    public int[] surfaceColor = new int[6 * 9];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,8 @@ public class ShowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show);
 
         Intent intent = getIntent();
-        if(intent != null){
-            requestCode =intent.getIntExtra("requestCode", 0);
+        if (intent != null) {
+            requestCode = intent.getIntExtra("requestCode", 0);
             surfaceColor = intent.getIntArrayExtra("surfaceColor");
         }
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);

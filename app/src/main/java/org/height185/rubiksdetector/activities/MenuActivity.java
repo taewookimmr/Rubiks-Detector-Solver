@@ -30,7 +30,7 @@ public class MenuActivity extends AppCompatActivity {
     private AdView adView;
 
     static final int PERMISSIONS_REQUEST_CODE = 1000;
-    String[] PERMISSIONS  = {"android.permission.CAMERA" ,"android.permission.INTERNET"};
+    String[] PERMISSIONS = {"android.permission.INTERNET"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,11 @@ public class MenuActivity extends AppCompatActivity {
 
         button_detect_rn = (Button) findViewById(R.id.button_detect_rn);
         button_start3d = (Button) findViewById(R.id.button_start3d);
-        button_manual    = (Button) findViewById(R.id.button_manual);
+        button_manual = (Button) findViewById(R.id.button_manual);
 
         button_detect_rn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DetectActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -91,9 +89,9 @@ public class MenuActivity extends AppCompatActivity {
     private boolean hasPermissions(String[] permissions) {
         int result;
         // 스트링 배열에 있는 퍼미션들의 허가 상태 여부 확인
-        for (String perms : permissions){
+        for (String perms : permissions) {
             result = ContextCompat.checkSelfPermission(this, perms);
-            if (result == PackageManager.PERMISSION_DENIED){
+            if (result == PackageManager.PERMISSION_DENIED) {
                 return false;           // 허가 안된 퍼미션 발견
             }
         }
@@ -104,28 +102,25 @@ public class MenuActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch(requestCode){
-
-            case PERMISSIONS_REQUEST_CODE:
-                if (grantResults.length > 0) {
-                    boolean cameraPermissionAccepted = grantResults[0]
-                            == PackageManager.PERMISSION_GRANTED;
-                    if (!cameraPermissionAccepted)
-                        showDialogForPermission("Permission is required to run this app");
-                }
-                break;
+        if (requestCode == PERMISSIONS_REQUEST_CODE) {
+            if (grantResults.length > 0) {
+                boolean permissionAccepted = grantResults[0]
+                        == PackageManager.PERMISSION_GRANTED;
+                if (!permissionAccepted)
+                    showDialogForPermission();
+            }
         }
     }
 
     @TargetApi(Build.VERSION_CODES.M)
-    private void showDialogForPermission(String msg) {
+    private void showDialogForPermission() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
         builder.setTitle("Notification");
-        builder.setMessage(msg);
+        builder.setMessage("Permission is required to run this app");
         builder.setCancelable(false);
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id){
+            public void onClick(DialogInterface dialog, int id) {
                 requestPermissions(PERMISSIONS, PERMISSIONS_REQUEST_CODE);
             }
         });

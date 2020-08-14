@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/bg_black"
-        android:visibility="visible"/>
+        android:visibility="visible" />
 
     <ImageView
         android:id="@+id/logo_word"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/logo_word"
-        android:visibility="visible"/>
+        android:visibility="visible" />
 
 </FrameLayout>

@@ -23,7 +23,7 @@ import org.height185.rubiksdetector.renderer.CubeRenderer;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CubeFragment extends Fragment implements AppCompatSeekBar.OnSeekBarChangeListener{
+public class CubeFragment extends Fragment implements AppCompatSeekBar.OnSeekBarChangeListener {
 
     private GLSurfaceView glView;
     private CubeRenderer cubesRenderer;
@@ -129,26 +129,26 @@ public class CubeFragment extends Fragment implements AppCompatSeekBar.OnSeekBar
             }
         });
 
-       return view;
+        return view;
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
-        switch (seekBar.getTransitionName()){
-            case "x" :
+        switch (seekBar.getTransitionName()) {
+            case "x":
                 if (cubesRenderer != null) {
                     cubesRenderer.setxRotate(progress / 10f);
                 }
                 break;
 
-            case "y" :
+            case "y":
                 if (cubesRenderer != null) {
                     cubesRenderer.setyRotate(progress / 10f);
                 }
                 break;
 
-            case "z" :
+            case "z":
 
                 if (cubesRenderer != null) {
                     cubesRenderer.setzRotate(progress / 10f);
@@ -173,24 +173,24 @@ public class CubeFragment extends Fragment implements AppCompatSeekBar.OnSeekBar
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if(getActivity() != null && getActivity() instanceof ShowActivity){
+        if (getActivity() != null && getActivity() instanceof ShowActivity) {
             ShowActivity showActivity = (ShowActivity) getActivity();
-            switch (showActivity.requestCode){
+            switch (showActivity.requestCode) {
                 case 0:
                     // MenuActivity의 show simulator 버튼으로부터 여기까지 온 경우
                     break;
 
                 case 1:
                     // TestActivity의 show 3d 버튼으로부터 여기까지 온 경우
-                    for(int i = 0; i < showActivity.surfaceColor.length; i++){
-                         cubesRenderer.cube.surfaceColor[i] = showActivity.surfaceColor[i];
+                    for (int i = 0; i < showActivity.surfaceColor.length; i++) {
+                        cubesRenderer.cube.surfaceColor[i] = showActivity.surfaceColor[i];
                     }
                     cubesRenderer.cube.flag_opencv = true;
                     cubesRenderer.cube.transcriptionProcess();
 
                     // 여기서 판별할 수 있다. 판별 후, legal state가 아닌 경우에는
                     // showActvity를 닫고 다시 TestActivity로 넘어가게 한다.
-                    if(!cubesRenderer.cube.isLegalState()){
+                    if (!cubesRenderer.cube.isLegalState()) {
                         // legal state인지 판별하는 판별 메서드로 판별한다.
                         // 판별식이 false라면 TestActivity에 Toast가 뜨도록 한다.
                         showActivity.setResult(R.integer.ILLEGAL);
@@ -203,72 +203,71 @@ public class CubeFragment extends Fragment implements AppCompatSeekBar.OnSeekBar
             }
 
 
-
         }
     }
 
-    public void buttonSetting(){
+    public void buttonSetting() {
 
         buttons[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 0;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 0;
             }
         });
 
         buttons[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 1;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 1;
             }
         });
 
         buttons[2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1)  cubesRenderer.cube.rotatedLayer = 2;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 2;
             }
         });
 
         buttons[3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1)  cubesRenderer.cube.rotatedLayer = 3;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 3;
             }
         });
 
         buttons[4].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1)  cubesRenderer.cube.rotatedLayer = 4;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 4;
             }
         });
 
         buttons[5].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 5;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 5;
             }
         });
 
         buttons[6].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 6;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 6;
             }
         });
 
         buttons[7].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 7;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 7;
             }
         });
 
         buttons[8].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(cubesRenderer.cube.rotatedLayer == -1)  cubesRenderer.cube.rotatedLayer = 8;
+                if (cubesRenderer.cube.rotatedLayer == -1) cubesRenderer.cube.rotatedLayer = 8;
             }
         });
 

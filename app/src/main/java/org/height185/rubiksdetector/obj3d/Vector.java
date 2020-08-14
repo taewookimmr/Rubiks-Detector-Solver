@@ -12,6 +12,7 @@ public class Vector {
     public Vector(float x, float y) {
         this(x, y, 0f);
     }
+
     public Vector(float x, float y, float z) {
         this.x = x;
         this.y = y;

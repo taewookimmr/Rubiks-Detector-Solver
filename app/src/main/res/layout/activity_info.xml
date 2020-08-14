@@ -3,26 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/BLACK">
+    android:background="@color/BLACK"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="App name : Rubik's cube detector and solver"
-        android:textColor="@color/WHITE"/>
+        android:textColor="@color/WHITE" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="App Version : 19-01"
-        android:textColor="@color/WHITE"/>
+        android:textColor="@color/WHITE" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Developer name : HEIGHT185"
-        android:textColor="@color/WHITE"/>
+        android:textColor="@color/WHITE" />
 
     <TextView
         android:layout_width="match_parent"
@@ -30,20 +30,20 @@
         android:text="\nTo be updated(by the end of June, 2019)
                       \n1. Plan to make this app support other ABIs(Present version supports only arm64-v8a)
                       \n2. Plan to introduce the algorithm which can provide near-God's number solution"
-        android:textColor="@color/WHITE"/>
+        android:textColor="@color/WHITE" />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="\nThe Private Policy of this app can be found at below url"
-        android:textColor="@color/WHITE"/>
+        android:textColor="@color/WHITE" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoLink="web"
-        android:text="https://whilescape.tistory.com/entry/Privacy-Policy-of-RubiksDetector"/>
+        android:text="https://whilescape.tistory.com/entry/Privacy-Policy-of-RubiksDetector" />
 
 
 </LinearLayout>

@@ -14,10 +14,10 @@ import org.height185.rubiksdetector.renderer.CubeView2D;
 public class TestFragment extends Fragment {
 
     public static final String NAME = "TEST";
-    public int surfaceColor[] = new int[6*9];
+    public int surfaceColor[] = new int[6 * 9];
 
 
-    public TestFragment(){
+    public TestFragment() {
     }
 
     public static TestFragment newInstance() {
@@ -31,11 +31,11 @@ public class TestFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if(getActivity() != null && getActivity() instanceof TestActivity){
+        if (getActivity() != null && getActivity() instanceof TestActivity) {
             TestActivity testActivity = (TestActivity) getActivity();
-             for(int i = 0; i < testActivity.surfaceColor.length; i++){
-                 this.surfaceColor[i] = testActivity.surfaceColor[i];
-             }
+            for (int i = 0; i < testActivity.surfaceColor.length; i++) {
+                this.surfaceColor[i] = testActivity.surfaceColor[i];
+            }
         }
     }
 
@@ -46,10 +46,6 @@ public class TestFragment extends Fragment {
         CubeView2D view = new CubeView2D(this.getContext(), surfaceColor);
         return view;
     }
-
-
-
-
 
 
 }

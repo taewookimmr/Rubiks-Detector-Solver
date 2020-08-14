@@ -9,7 +9,7 @@ import org.height185.rubiksdetector.R;
 
 
 // AppCompatActivity 대신 Activity를 extends
-public class LogoActivity  extends AppCompatActivity {
+public class LogoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +18,7 @@ public class LogoActivity  extends AppCompatActivity {
         handler.postDelayed(new delayHandler(), 2000); // 2초뒤에 다음 엑티비티로
     }
 
-    class delayHandler implements  Runnable{
+    class delayHandler implements Runnable {
         @Override
         public void run() {
             Intent intent = new Intent(getApplicationContext(), StartActivity.class);

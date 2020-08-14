@@ -15,52 +15,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
+            android:layout_weight="1"
             android:background="@drawable/selector_general"
             android:gravity="center_horizontal|center_vertical"
             android:text="DETECT\nRIGHT NOW"
             android:textColor="@color/WHITE"
-            android:textSize="30dp"
-            android:layout_weight="1"/>
+            android:textSize="30dp" />
 
         <Button
             android:id="@+id/button_start3d"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
+            android:layout_weight="1"
             android:background="@drawable/selector_general"
             android:gravity="center_horizontal|center_vertical"
             android:text="START\n SIMULATOR"
             android:textColor="@color/WHITE"
-            android:textSize="30dp"
-            android:layout_weight="1"/>
+            android:textSize="30dp" />
 
 
         <Button
             android:id="@+id/button_manual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/selector_general"
             android:gravity="center_horizontal|center_vertical"
             android:text="SEE\nMANUAL"
             android:textColor="@android:color/white"
-            android:textSize="30dp"
-            android:layout_weight="1"/>
-
+            android:textSize="30dp" />
 
 
     </LinearLayout>
 
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|center_horizontal"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_menu"
-        android:layout_gravity="bottom|center_horizontal">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/admob_banner_menu"></com.google.android.gms.ads.AdView>
 
 </FrameLayout>

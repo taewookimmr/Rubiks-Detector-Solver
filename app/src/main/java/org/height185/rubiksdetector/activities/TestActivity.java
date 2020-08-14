@@ -3,7 +3,6 @@ package org.height185.rubiksdetector.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -16,19 +15,14 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 import org.height185.rubiksdetector.R;
-import org.height185.rubiksdetector.activities.DetectActivity;
-import org.height185.rubiksdetector.activities.ShowActivity;
-import org.height185.rubiksdetector.adapters.ViewPagerAdapter;
-import org.height185.rubiksdetector.fragment.TestFragment;
 
 public class TestActivity extends AppCompatActivity {
 
-    public int[] surfaceColor = new int[6*9]; // cube's 2d state data
-    public Button button_reDetect; // button for going to DetectActivity
+    public int[] surfaceColor = new int[6 * 9]; // cube's 2d state data
     public Button button_show3d;   // button for going to ShowActivity
     private AdView adView;         // admob
 
-    public Button[] buttons_state = new Button[6*9]; // buttons for showing 2d state data as colors
+    public Button[] buttons_state = new Button[6 * 9]; // buttons for showing 2d state data as colors
     public int[] bid = {
             // array of ids of buttons_state
             R.id.b0, R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8,
@@ -42,7 +36,7 @@ public class TestActivity extends AppCompatActivity {
     public Button[] buttons_update = new Button[6]; // buttons for updating the color of a buttons_state
     public int[] buid = {
             // array of ids of buttons_update
-            R.id.bu0, R.id.bu1,R.id.bu2,R.id.bu3,R.id.bu4,R.id.bu5
+            R.id.bu0, R.id.bu1, R.id.bu2, R.id.bu3, R.id.bu4, R.id.bu5
     };
 
     public LinearLayout linlay_update; // linearLayout which contain buttons_update
@@ -57,7 +51,7 @@ public class TestActivity extends AppCompatActivity {
 
         // Sample AdMob app ID : Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
         MobileAds.initialize(this, getString(R.string.admob_app_id));
-        adView = (AdView)findViewById(R.id.adView_test);
+        adView = (AdView) findViewById(R.id.adView_test);
         Bundle extras = new Bundle();
         extras.putString("max_ad_content_rating", "G"); // 앱이 3세 이상 사용가능이라면 광고레벨을 설정해줘야 한다
         AdRequest adRequest = new AdRequest.Builder()
@@ -66,19 +60,9 @@ public class TestActivity extends AppCompatActivity {
         adView.loadAd(adRequest);
 
         Intent intent = getIntent();
-        if(intent != null){
+        if (intent != null) {
             surfaceColor = intent.getIntArrayExtra("surfaceColor");
         }
-
-        button_reDetect = (Button) findViewById(R.id.button_reDetect);
-        button_reDetect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DetectActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         button_show3d = (Button) findViewById(R.id.button_show3d);
         button_show3d.setOnClickListener(new View.OnClickListener() {
@@ -93,16 +77,30 @@ public class TestActivity extends AppCompatActivity {
         });
 
 
-        for(int i = 0; i < 6*9; i++){
-            buttons_state[i] = (Button)findViewById(bid[i]);
-            switch (surfaceColor[i]){
-                case 0: buttons_state[i].setBackground(getResources().getDrawable(R.color.BLUE));break;
-                case 1: buttons_state[i].setBackground(getResources().getDrawable(R.color.GREEN));break;
-                case 2: buttons_state[i].setBackground(getResources().getDrawable(R.color.RED));break;
-                case 3: buttons_state[i].setBackground(getResources().getDrawable(R.color.ORANGE));break;
-                case 4: buttons_state[i].setBackground(getResources().getDrawable(R.color.YELLOW));break;
-                case 5: buttons_state[i].setBackground(getResources().getDrawable(R.color.WHITE));break;
-                default: buttons_state[i].setBackground(getResources().getDrawable(R.color.BLACK));break;
+        for (int i = 0; i < 6 * 9; i++) {
+            buttons_state[i] = (Button) findViewById(bid[i]);
+            switch (surfaceColor[i]) {
+                case 0:
+                    buttons_state[i].setBackground(getResources().getDrawable(R.color.BLUE));
+                    break;
+                case 1:
+                    buttons_state[i].setBackground(getResources().getDrawable(R.color.GREEN));
+                    break;
+                case 2:
+                    buttons_state[i].setBackground(getResources().getDrawable(R.color.RED));
+                    break;
+                case 3:
+                    buttons_state[i].setBackground(getResources().getDrawable(R.color.ORANGE));
+                    break;
+                case 4:
+                    buttons_state[i].setBackground(getResources().getDrawable(R.color.YELLOW));
+                    break;
+                case 5:
+                    buttons_state[i].setBackground(getResources().getDrawable(R.color.WHITE));
+                    break;
+                default:
+                    buttons_state[i].setBackground(getResources().getDrawable(R.color.BLACK));
+                    break;
             }
             buttons_state[i].setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -110,13 +108,13 @@ public class TestActivity extends AppCompatActivity {
 
                     linlay_update.setVisibility(View.VISIBLE); // buttons_updata are now visible
                     int id = view.getId();
-                    for(int i = 0; i < 6*9; i++){
-                        if(id == bid[i]){
+                    for (int i = 0; i < 6 * 9; i++) {
+                        if (id == bid[i]) {
                             button_index = i; // save which buttons_state is clicked
                             break;
                         }
                     }
-                    for(int i = 0; i < 6*9; i++){
+                    for (int i = 0; i < 6 * 9; i++) {
                         buttons_state[i].setEnabled(false);
                         // until the color of clicked buttons_state is changed,
                         // all the buttons_state are now unabled.
@@ -127,35 +125,35 @@ public class TestActivity extends AppCompatActivity {
 
         linlay_update = (LinearLayout) findViewById(R.id.linlay_update);
 
-        for(int i = 0; i < 6; i++){
-            buttons_update[i] = (Button)findViewById(buid[i]);
+        for (int i = 0; i < 6; i++) {
+            buttons_update[i] = (Button) findViewById(buid[i]);
             buttons_update[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     linlay_update.setVisibility(View.INVISIBLE);
                     int id = view.getId(); // which buttons_update is clicked
 
-                    if(id == buid[0]){  // change the color of the buttons_state to blue
+                    if (id == buid[0]) {  // change the color of the buttons_state to blue
                         buttons_state[button_index].setBackground(getResources().getDrawable(R.color.BLUE));
-                        surfaceColor[button_index]=0;
-                    }else if(id == buid[1]){ // green
+                        surfaceColor[button_index] = 0;
+                    } else if (id == buid[1]) { // green
                         buttons_state[button_index].setBackground(getResources().getDrawable(R.color.GREEN));
-                        surfaceColor[button_index]=1;
-                    }else if(id == buid[2]){ // red
+                        surfaceColor[button_index] = 1;
+                    } else if (id == buid[2]) { // red
                         buttons_state[button_index].setBackground(getResources().getDrawable(R.color.RED));
-                        surfaceColor[button_index]=2;
-                    }else if(id == buid[3]){ // orange
+                        surfaceColor[button_index] = 2;
+                    } else if (id == buid[3]) { // orange
                         buttons_state[button_index].setBackground(getResources().getDrawable(R.color.ORANGE));
-                        surfaceColor[button_index]=3;
-                    }else if(id == buid[4]){ // yellow
+                        surfaceColor[button_index] = 3;
+                    } else if (id == buid[4]) { // yellow
                         buttons_state[button_index].setBackground(getResources().getDrawable(R.color.YELLOW));
-                        surfaceColor[button_index]=4;
-                    }else if(id == buid[5]){ // white
+                        surfaceColor[button_index] = 4;
+                    } else if (id == buid[5]) { // white
                         buttons_state[button_index].setBackground(getResources().getDrawable(R.color.WHITE));
-                        surfaceColor[button_index]=5;
+                        surfaceColor[button_index] = 5;
                     }
 
-                    for(int i = 0; i < 6*9; i++){
+                    for (int i = 0; i < 6 * 9; i++) {
                         buttons_state[i].setEnabled(true);
                     }
                     // now the color of clicked buttons_state have just changed,
@@ -165,16 +163,13 @@ public class TestActivity extends AppCompatActivity {
                 }
             });
         }
-
-
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == R.integer.ILLEGAL){
-            Toast.makeText(this, "ILLEGAL STATE\nDETECT AGAIN",Toast.LENGTH_LONG).show();
+        if (resultCode == R.integer.ILLEGAL) {
+            Toast.makeText(this, "ILLEGAL STATE\nDETECT AGAIN", Toast.LENGTH_LONG).show();
 
         }
     }

@@ -21,8 +21,8 @@ public class SolutionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_solution);
 
         Intent intent = getIntent();
-        if(intent != null){
-            solution  = intent.getStringArrayListExtra("solution");
+        if (intent != null) {
+            solution = intent.getStringArrayListExtra("solution");
         }
 
         textView_number = (TextView) findViewById(R.id.textView_number);
@@ -30,11 +30,15 @@ public class SolutionActivity extends AppCompatActivity {
 
         textView_number.setText(solution.size() + " ");
 
-        String result ="";
-        for(int i = 0; i < solution.size(); i++) {
+        String result = "";
+        for (int i = 0; i < solution.size(); i++) {
             result += solution.get(i) + " ";
-            if((i+1)%5 == 0 && !((i+1)%10 == 0)) {result += "\t";}
-            if((i+1)%10 == 0) {result += "\n";}
+            if ((i + 1) % 5 == 0 && !((i + 1) % 10 == 0)) {
+                result += "\t";
+            }
+            if ((i + 1) % 10 == 0) {
+                result += "\n";
+            }
         }
         textView_result.setText(result);
     }

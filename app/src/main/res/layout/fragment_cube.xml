@@ -129,7 +129,7 @@
                     android:text="x axis"
                     android:textColor="@color/BLACK" />
 
-                <android.support.v7.widget.AppCompatSeekBar
+                <androidx.appcompat.widget.AppCompatSeekBar
                     android:id="@+id/seek_xRotate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -150,7 +150,7 @@
                     android:text="y axis"
                     android:textColor="@color/BLACK" />
 
-                <android.support.v7.widget.AppCompatSeekBar
+                <androidx.appcompat.widget.AppCompatSeekBar
                     android:id="@+id/seek_yRotate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -171,7 +171,7 @@
                     android:text="z axis"
                     android:textColor="@color/BLACK" />
 
-                <android.support.v7.widget.AppCompatSeekBar
+                <androidx.appcompat.widget.AppCompatSeekBar
                     android:id="@+id/seek_zRotate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
